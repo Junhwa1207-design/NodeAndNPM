@@ -4,7 +4,8 @@
   "description": "learning npm and node",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Hello from Node!\"",
+    "start":"node app"
   },
   "repository": {
     "type": "git",
@@ -31,3 +32,5 @@
     "nodemon": "^2.0.7"
   }
 }
+
+
