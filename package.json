@@ -1,0 +1,33 @@
+{
+  "name": "nodeandnpm",
+  "version": "1.0.0",
+  "description": "learning npm and node",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Junhwa1207-design/NodeAndNPM.git"
+  },
+  "keywords": [
+    "node",
+    "npm",
+    "github"
+  ],
+  "author": "Juna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Junhwa1207-design/NodeAndNPM/issues"
+  },
+  "homepage": "https://github.com/Junhwa1207-design/NodeAndNPM#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "mysql": "^2.18.1",
+    "underscore": "^1.12.0"
+  },
+  "devDependencies": {
+    "gulp-sass": "^4.1.0",
+    "nodemon": "^2.0.7"
+  }
+}
