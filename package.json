@@ -2,10 +2,11 @@
   "name": "nodeandnpm",
   "version": "1.0.0",
   "description": "learning npm and node",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Hello from Node!\"",
-    "start":"node app"
+    "start-dev": "nodemon app",
+    "start": "node app"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/Junhwa1207-design/NodeAndNPM#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "gulp": "^4.0.2",
     "mysql": "^2.18.1",
     "underscore": "^1.12.0"
@@ -32,5 +34,3 @@
     "nodemon": "^2.0.7"
   }
 }
-
-
