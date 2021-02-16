@@ -1,56 +1,31 @@
-const http = require('http'); // like a PHP require
-const stream = require('fs'); 
-//require is more or less the same as a JS import
+const express = require('express'); // like a PHP require
+const path = require('path');
 
-// const hostname = '127.0.0.1'; // this is localhost
+const server = express();
+
+
+// set our views directory
+server.set("views", path.join(__dirname, 'views'));
+// set the static assets director so Express knows where to look
+//for css files, JS files, images et - anything static
+server.use(express.static(path.join(__dirname, 'public')));
+
+server.get("/", (req, res) => {
+  console.log('you have now hit the home route');
+  res.sendFile('views/index.html');
+})
+
+server.get("/contact", (req, res) => {
+  console.log('hit the contact route');
+  res.sendFile('views/contact.html');
+})
+
 const port = process.env.PORT || 3000; // localhost:3000
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-
-
-  let url = req.url; // i.e. localhost:3000/contact
-
-  switch (url) {
-    case "/":
-      stream.readFile('index.html' , null, ((err, data) => {
-        if (err) {
-          res.writeHead(404);
-          res.write('404 not found');
-        }else {
-          res.write(data);
-        }
-      })) 
-      break;
-    case "/contact":
-      stream.readFile('contact.html' , null, ((err, data) => {
-        if (err) {
-          res.writeHead(404);
-          res.write('404 not found');
-        }else {
-          res.write(data);
-        }
-      })) 
-      break;
-
-      case "/portfolio":
-        stream.readFile('portfolio.html' , null, ((err, data) => {
-          if (err) {
-            res.writeHead(404);
-            res.write('404 not found');
-          }else {
-            res.write(data);
-          }
-        })) 
-        break;
-
-        default:
-  res.end('Hello World'); // serve up a custom error page
-
-}
-});
-
 server.listen(port, () => {
-  console.log(`Server is now running at ${port}:/`);
+  console.log(`Server is now running at ${port}/`);
 });
+  
+  
+  
+  
